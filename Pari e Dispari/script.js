@@ -9,9 +9,9 @@
 // 2 - Generiamo un numero random (sempre da 1 a 5) per il computer
 // 3 - Sommiamo i due numeri
 
-// 1 - Stabiliamo se la somma dei due numeri e pari o dispari (usando un altra function)'
+// 4 - Stabiliamo se la somma dei due numeri e pari o dispari (usando un altra function)'
 //   - Controllo se la somma e pari o dispari con il % di 2
-// 2 - Dichiariamo chi ha vinto
+// 5 - Dichiariamo chi ha vinto
 
 
 // --- Function per sommare due numeri num1 + num2
