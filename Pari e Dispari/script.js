@@ -26,55 +26,65 @@ function generaNumeroRandom(min, max) {
     return random;
 }
 
- // --- Function per controlare se un numero e pari o dispari
+//  // --- Function per controlare se un numero e pari o dispari
  function evenOodd(sum) {
     if ( sum % 2 === 0 ) {
-        alert(`la somma e un numero pari ${sum} 😁`)
         return true
-    }
-    else {
-        alert(`la somma e un numero dispari ${sum} 😁`)
     }
     return false
 }
 
 // --- Function controllo se due numeri sono pari entrambi, o se due numeri sono dispari entrambim o se un numero e pari e un numero dispari o al contrario
 function numbersEvenorOdd(num1, num2) {
-    if ( numbUtente % 2 === 0 && sum % 2 === 0 ) {
-        alert(`Il numero del utente e pari ${numbUtente} e il numero della somma e pari ${sum} quindi ha vinto il utente perche tutti due numeri sono pari 😎`)
+    if ( userEvenOrOdd === (`pari`) && sum % 2 === 0 ) {
         return true
     }
-    else if ( numbUtente % 2 === 1 && sum % 2 === 1) {
-        alert(`Il numero del utente e dispari ${numbUtente} e il numero della somma e dispari ${sum} quindi ha vinto il utente perche tutti due numeri sono dispari 😎`)
+    else if ( userEvenOrOdd === (`dispari`) && sum % 2 === 1) {
         return true
-
-    }
-    else {
-        alert(`Ha vinto il CPU perche il numero del utente ${numbUtente} e diverso dal numero ${sum} pari/dispari o dispari/pari 😢`)
     }
     return false
 }
 
-// --- Function per chiedere al utente di inserire un numero 
-function numbUser(min, max) {
-    const numbUtente = Number(prompt(`Inserisci un numero da 1 a 5`))
-    console.log(numbUtente)
-    if ( numbUtente >= min && numbUtente <= max) {  
-    }
-    else {
-    alert(`Hai inserito un numero sbagliato 😢`)
-    broke;
-    }
-    return numbUtente
-}
+let userEvenOrOdd;
+do 
+  { 
+    userEvenOrOdd = prompt(`Inserisci pari o dispari`);
+} while(userEvenOrOdd !== `pari` && userEvenOrOdd !== `dispari`)
 
+let numbUtente; 
+do {
+    numbUtente = Number(prompt(`Inserisci un numero da 1 a 5`))
+} while(isNaN(numbUtente) || numbUtente < 1 || numbUtente > 5 )
+   
 
 const numbCpu = generaNumeroRandom(1, 5)
 console.log(numbCpu);
-const numbUtente = numbUser(1, 5);
+
 const sum = sumNumbers(numbUtente, numbCpu)
 console.log(sum)
+
+
 const even = evenOodd(sum);
 console.log(even)
+if ( sum % 2 === 0 ) {
+    alert(`la somma e un numero pari ${sum} 😁`)
+}
+else {
+    alert(`la somma e un numero dispari ${sum} 😁`)
+}
+
+
 const isEvenorOdd = numbersEvenorOdd(numbUtente, sum)
 console.log(isEvenorOdd);
+
+   if ( userEvenOrOdd === (`pari`) && sum % 2 === 0 ) {
+        alert(`L'utente ha scelto ${userEvenOrOdd} e il numero della somma e pari ${sum} quindi ha vinto l'utente 😎`)
+    }
+    else if ( userEvenOrOdd === (`dispari`) && sum % 2 === 1) {
+        alert(`L'utente ha scelto ${userEvenOrOdd} e il numero della somma e dispari ${sum} quindi ha vinto l'utente 😎`)
+      
+    }
+    else {
+        alert(`Ha vinto il CPU perche l'utente ha scelto ${userEvenOrOdd} e diverso dal numero ${sum} pari/dispari o dispari/pari 😢`)
+    }
+   
