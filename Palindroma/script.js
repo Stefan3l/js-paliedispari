@@ -8,7 +8,7 @@
 
 
     
- function reverseWord(word) {
+ function isPalindroma(word) {
         let wordReverse =""
         for (let i = word.length - 1; i >= 0; i--) {
             wordReverse += word[i];
@@ -24,4 +24,4 @@
 
 
  const word = prompt(`Inserisci una parola`)
- console.log(reverseWord(word))
+ console.log(isPalindroma(word))
